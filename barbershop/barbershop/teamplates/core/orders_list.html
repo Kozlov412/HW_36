@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список заявок</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Список заявок</h1>
+    <ul>
+        {% for order in orders %}
+            <li>{{ order.client_name }} - {{ order.status }}</li>
+        {% endfor %}
+    </ul>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
