@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали заявки</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+</head>
+<body>
+    <h1>Детали заявки</h1>
+    <p>Имя клиента: {{ order.client_name }}</p>
+    <p>Услуги: {% for service in order.services %}{{ service }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+    <p>Мастер: {{ master.name }}</p>
+    <p>Дата: {{ order.date }}</p>
+    <p>Статус: {{ order.status }}</p>
+    <a href="{% url 'orders_list' %}">Вернуться к списку заявок</a>
+    <script src="{% static 'main.js' %}"></script>
+</body>
+</html>
